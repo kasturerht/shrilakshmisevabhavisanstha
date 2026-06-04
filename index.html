@@ -36,8 +36,12 @@
     .divine-glow {
       box-shadow: 0 0 60px 20px rgba(212, 175, 55, 0.25);
     }
-    .divine-glow-card {
-      box-shadow: 0 0 45px 15px rgba(212, 175, 55, 0.35);
+    .temple-arch-clip {
+      clip-path: url(#temple-arch);
+      -webkit-clip-path: url(#temple-arch);
+    }
+    .temple-arch-wrapper {
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
     }
 
     /* अ) सुवर्ण कणांचे तरंगणे (Divine Particles) */
@@ -167,8 +171,16 @@
     </nav>
   </header>
 
-  <!-- ==================== २. NEW DEVOTIONAL LIVE HERO SECTION ==================== -->
   <section class="relative bg-templeBlue min-h-[90vh] flex items-center justify-center overflow-hidden py-12 px-4 select-none">
+    
+    <!-- SVG Clip Path for Temple Arch -->
+    <svg width="0" height="0" class="absolute">
+      <defs>
+        <clipPath id="temple-arch" clipPathUnits="objectBoundingBox">
+          <path d="M 0 1 L 0 0.35 C 0 0.15, 0.15 0.05, 0.35 0.03 C 0.45 0.01, 0.48 0, 0.5 0 C 0.52 0, 0.55 0.01, 0.65 0.03 C 0.85 0.05, 1 0.15, 1 0.35 L 1 1 Z" />
+        </clipPath>
+      </defs>
+    </svg>
     
     <!-- 🎞️ Background Ambient Glow (Extremely blurred, low opacity, shifts colors dynamically with the slides) -->
     <div class="absolute inset-0 w-full h-full bg-[#060c18] z-0 overflow-hidden blur-[60px] opacity-25 scale-110 pointer-events-none">
@@ -241,47 +253,24 @@
         </div>
       </div>
 
-      <!-- उजवा कॉलम: सोनेरी फ्रेममधील इमेज स्लायडर (Right Column: Framed Carousel) -->
+      <!-- उजवा कॉलम: सोनेरी मंदिर कमान प्रतिमा स्लायडर (Right Column: Temple Arch Image Slider) -->
       <div class="lg:col-span-5 flex justify-center items-center w-full order-1 lg:order-2 mt-4 lg:mt-0">
-        <div class="relative w-full max-w-[350px] sm:max-w-[390px] md:max-w-[420px] aspect-[4/5] rounded-[2rem] p-1 bg-gradient-to-b from-amber-300 via-amber-500 to-yellow-600 shadow-[0_20px_50px_rgba(0,0,0,0.65)] divine-glow-card">
-          <!-- आतील सोनेरी बॉर्डर (Inner Arch/Frame lines) -->
-          <div class="absolute inset-2 rounded-[1.8rem] border-2 border-amber-200/40 z-20 pointer-events-none"></div>
+        <div class="relative w-full max-w-[360px] sm:max-w-[400px] md:max-w-[430px] aspect-[3/4] temple-arch-wrapper">
           
-          <!-- प्रतिमा स्लायडर (Image container with glassmorphic layers to prevent cropping) -->
-          <div class="relative w-full h-full rounded-[1.7rem] overflow-hidden bg-[#060c18] z-10">
-            
-            <!-- Slide 1 -->
-            <div class="absolute inset-0 w-full h-full slide-1 overflow-hidden">
-              <img src="ambabai.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
-              <img src="ambabai.jpg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="absolute inset-0 w-full h-full slide-2 overflow-hidden">
-              <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
-              <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="absolute inset-0 w-full h-full slide-3 overflow-hidden">
-              <img src="mahalaxmi.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
-              <img src="mahalaxmi.jpg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="absolute inset-0 w-full h-full slide-4 overflow-hidden">
-              <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
-              <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
-            </div>
+          <!-- सोनेरी कमान बॉर्डर (Thin Golden Arch Outline) -->
+          <div class="absolute inset-0 temple-arch-clip bg-gradient-to-b from-amber-300 via-amber-500 to-yellow-600 z-0"></div>
+          
+          <!-- मुख्य प्रतिमा स्लायडर (Main Image Slider inside the Arch, styled with object-cover to look like a window view) -->
+          <div class="absolute inset-[2.5px] temple-arch-clip bg-[#060c18] z-10 overflow-hidden">
+            <img src="ambabai.jpg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-cover object-center slide-1">
+            <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-cover object-center slide-2">
+            <img src="mahalaxmi.jpg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-cover object-center slide-3">
+            <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-cover object-center slide-4">
             
             <!-- हळवा शॅडो इफेक्ट (Soft shadow overlay) -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/15 pointer-events-none"></div>
           </div>
 
-          <!-- कमानीवरील नावाची पाटी (Decorative Badge) -->
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-[10px] tracking-widest px-4 py-1.5 rounded-full uppercase shadow-md border border-amber-300/30 z-30">
-            श्री अंबाबाई माता
-          </div>
         </div>
       </div>
 
