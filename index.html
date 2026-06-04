@@ -139,11 +139,23 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="#" class="relative group overflow-hidden bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 bg-[length:200%_auto] hover:bg-right text-templeBlue font-bold text-xs lg:text-sm px-5 py-2.5 rounded shadow-[0_0_15px_rgba(251,191,36,0.4)] transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.6)] leading-normal flex items-center gap-2 border border-yellow-200/50">
-          <!-- Shine effect -->
-          <span class="absolute inset-0 w-full h-full -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/50 to-transparent z-0"></span>
-          <svg class="w-4 h-4 text-amber-900 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          <span class="relative z-10">Donation / देणगी</span>
+        <a href="#" class="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold transition-all duration-500 ease-in-out hover:scale-105 cursor-pointer rounded-full">
+          <!-- Outer Divine Aura (Pulsing Glow) -->
+          <span class="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500 via-yellow-300 to-orange-500 opacity-40 blur-md transition duration-500 group-hover:opacity-100 group-hover:blur-xl animate-pulse"></span>
+          <!-- Inner Button Shape with Golden Gradient Border -->
+          <span class="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 p-[1.5px]">
+             <!-- Dark Glass Core -->
+             <span class="absolute inset-0 rounded-full bg-[#060c18] backdrop-blur-xl"></span>
+          </span>
+          <!-- Sweeping Laser / Shine Effect on Hover -->
+          <span class="absolute inset-0 rounded-full overflow-hidden">
+             <span class="absolute inset-0 w-full h-full -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></span>
+          </span>
+          <!-- Text & Icon -->
+          <span class="relative flex items-center gap-2 z-10 text-amber-300 group-hover:text-white transition-colors duration-300 tracking-wide text-xs lg:text-sm">
+            <svg class="w-4 h-4 text-rose-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.8)] animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Donation / देणगी
+          </span>
         </a>
       </div>
     </nav>
