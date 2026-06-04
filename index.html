@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Mahalaxmi Temple Kolhapur</title>
+  
+  <!-- १. मराठीसाठी विशेष गुगल फॉन्ट (Noto Sans Devanagari) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            // मराठीसाठी Noto Sans आणि इंग्रजीसाठी Poppins प्रायोरिटी दिली आहे
+            sans: ['Noto Sans Devanagari', 'Poppins', 'sans-serif'],
+          },
+          colors: {
+            templeBlue: '#0f1a30',
+            templeGold: '#d4af37',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .divine-glow {
+      box-shadow: 0 0 60px 20px rgba(212, 175, 55, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased tracking-wide">
+
+  <!-- ==================== १. HEADER SECTION ==================== -->
+  <header class="w-full sticky top-0 z-50 shadow-lg">
+    
+    <!-- अनाउन्समेंट बार: उंची वाढवली (py-3) आणि अक्षरांना सुरक्षित केले (leading-relaxed) -->
+    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-white text-center py-3 px-4 text-xs md:text-sm font-medium tracking-wide shadow-sm">
+      <span class="inline-flex items-center gap-2 leading-relaxed">
+        <span class="w-2 h-2 rounded-full bg-white animate-pulse shrink-0"></span>
+        || श्री करवीर निवासिनी अंबाबाई देवस्थान समिती, कोल्हापूर || अधिकृत वेबपेजवर आपले स्वागत आहे.
+      </span>
+    </div>
+
+    <!-- मुख्य नेव्हिगेशन बार -->
+    <nav class="bg-templeBlue border-b border-amber-500/20 px-4 lg:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center p-2 shadow-inner">
+          <svg class="w-full h-full text-templeBlue" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L4 10h16L12 2zm0 3.5l4.5 4.5h-9L12 5.5zM4 12h16v2H4v-2zm2 4h12v4H6v-4z"/>
+          </svg>
+        </div>
+        <!-- इथल्या मराठी टेक्स्टला leading-relaxed दिले आहे जेणेकरून मात्रा कटणार नाहीत -->
+        <div class="leading-relaxed">
+          <span class="block text-white font-bold text-sm lg:text-base tracking-wide">श्री अंबाबाई देवस्थान</span>
+          <span class="block text-amber-400 text-[10px] lg:text-xs tracking-wider uppercase font-semibold font-mono">Kolhapur, Maharashtra</span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="#" class="text-amber-400 font-semibold text-sm border-b-2 border-amber-400 pb-1">Home</a>
+        <a href="#" class="text-gray-300 hover:text-amber-400 font-medium text-sm transition-all">Devsthan</a>
+        <a href="#" class="text-gray-300 hover:text-amber-400 font-medium text-sm transition-all">Pooja/Seva</a>
+        <a href="#" class="text-gray-300 hover:text-amber-400 font-medium text-sm transition-all">Live Darshan</a>
+        <a href="#" class="text-gray-300 hover:text-amber-400 font-medium text-sm transition-all">News</a>
+        <a href="#" class="text-gray-300 hover:text-amber-400 font-medium text-sm transition-all">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-templeBlue font-bold text-xs lg:text-sm px-4 py-2.5 rounded shadow-md transition-all transform hover:scale-105 leading-normal">
+          Donation / देणगी
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== २. HERO SECTION ==================== -->
+  <section class="relative bg-gradient-to-b from-templeBlue via-[#13223f] to-templeBlue min-h-[85vh] flex flex-col items-center justify-center overflow-hidden py-16 px-4">
+    
+    <!-- नक्षीकाम बॅकग्राउंड -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
+      <svg class="w-[700px] h-[700px] text-amber-400" fill="currentColor" viewBox="0 0 100 100">
+        <path d="M50 0 C60 25, 75 25, 100 50 C75 75, 60 75, 50 100 C40 75, 25 75, 0 50 C25 25, 40 25, 50 0 Z"/>
+        <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-70"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      
+      <span class="text-amber-400 font-semibold tracking-[0.25em] text-xs lg:text-sm uppercase mb-4 block leading-relaxed">
+        ।। करवीर निवासिनी महालक्ष्मी प्रसन्न ।।
+      </span>
+      
+      <!-- मुख्य हेडिंग: py-3 जोडून अक्षरांना कट होण्यापासून पूर्णपणे सुरक्षित केले आहे -->
+      <h1 class="text-white text-3xl lg:text-5xl font-bold tracking-wide mb-10 py-3 leading-relaxed drop-shadow-lg">
+        श्रीमंत करवीर निवासिनी <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-500 to-amber-200 drop-shadow">अंबाबाई माता</span>
+      </h1>
+
+      <!-- गाभारा कमान फ्रेम -->
+      <div class="relative group my-2">
+        <div class="absolute inset-0 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-amber-500/30 via-amber-600/10 to-transparent rounded-full blur-3xl w-80 h-80 mx-auto -top-10"></div>
+        
+        <div class="relative w-72 h-[380px] lg:w-80 lg:h-[440px] rounded-t-[160px] rounded-b-2xl border-4 border-amber-400 bg-[#0c1424] shadow-[0_0_50px_rgba(212,175,55,0.35)] overflow-hidden flex flex-col items-center justify-between transition-all duration-500 group-hover:scale-[1.02]">
+          
+          <div class="absolute inset-2 border-2 border-dashed border-amber-500/20 rounded-t-[150px] rounded-b-xl pointer-events-none z-20"></div>
+
+          <!-- रिअल इमेज लोड होणारी जागा -->
+          <img src="ambabai.jpg" 
+               alt="Shree Mahalaxmi Ambabai Devi - Kolhapur" 
+               class="w-full h-full object-cover object-top relative z-10"
+               onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';" />
+
+          <!-- इमेज नसल्यास बॅकअप मेसेज -->
+          <div id="image-placeholder" class="hidden absolute inset-0 flex-col items-center justify-center p-6 text-center z-10">
+            <svg class="w-12 h-12 text-amber-500/40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 002-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="text-amber-400/60 text-xs leading-relaxed">कृपया तुमच्या फोल्डरमध्ये 'ambabai.jpg' नावाचा खरा फोटो ठेवा.</p>
+          </div>
+
+          <div class="w-full border-t border-amber-400/40 bg-templeBlue/90 py-3 text-center z-20 relative">
+            <span class="text-amber-400 text-[11px] font-bold tracking-wider block leading-normal">मूळ पीठ • कोल्हापूर</span>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- बटन सेक्शन -->
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a href="#live-darshan" class="bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-700 hover:to-amber-700 text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:-translate-y-1 flex items-center gap-3 leading-normal">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+          </span>
+          थेट लाईव दर्शन
+        </a>
+        <a href="#pooja-schedule" class="bg-transparent hover:bg-white/5 text-amber-400 hover:text-amber-300 border border-amber-400/40 font-semibold text-sm px-8 py-3.5 rounded-full transition-all transform hover:-translate-y-1 leading-normal">
+          दैनिक पूजा वेळापत्रक
+        </a>
+      </div>
+
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full h-[6px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-70"></div>
+  </section>
+
+  <!-- श्लोक पट्टी: उंची वाढवून (py-3) आणि अंतर्गत घटकाला (py-1) देऊन सुरक्षित केले -->
+  <div class="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-templeBlue py-3 font-bold text-xs lg:text-sm tracking-wide overflow-hidden shadow-inner border-y border-amber-600/20">
+    <div class="animate-marquee whitespace-nowrap inline-block py-1 leading-relaxed">
+      सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके । शरण्ये त्र्यंबके गौरि नारायणि नमोऽस्तु ते ॥ • करवीरपुरवासिनी महालक्ष्मी माता की जय ॥ • 
+    </div>
+  </div>
+
+  <!-- ॲनिमेशन स्टाईल -->
+  <style>
+    @keyframes marquee {
+      0% { transform: translate3d(100%, 0, 0); }
+      100% { transform: translate3d(-100%, 0, 0); }
+    }
+    .animate-marquee {
+      animation: marquee 25s linear infinite;
+    }
+  </style>
+
+</body>
+</html>
