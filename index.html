@@ -243,19 +243,39 @@
 
       <!-- उजवा कॉलम: सोनेरी फ्रेममधील इमेज स्लायडर (Right Column: Framed Carousel) -->
       <div class="lg:col-span-5 flex justify-center items-center w-full order-1 lg:order-2 mt-4 lg:mt-0">
-        <div class="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] aspect-[4/5] rounded-[2rem] p-1 bg-gradient-to-b from-amber-300 via-amber-500 to-yellow-600 shadow-[0_20px_50px_rgba(0,0,0,0.6)] divine-glow-card">
+        <div class="relative w-full max-w-[350px] sm:max-w-[390px] md:max-w-[420px] aspect-[4/5] rounded-[2rem] p-1 bg-gradient-to-b from-amber-300 via-amber-500 to-yellow-600 shadow-[0_20px_50px_rgba(0,0,0,0.65)] divine-glow-card">
           <!-- आतील सोनेरी बॉर्डर (Inner Arch/Frame lines) -->
           <div class="absolute inset-2 rounded-[1.8rem] border-2 border-amber-200/40 z-20 pointer-events-none"></div>
           
-          <!-- प्रतिमा स्लायडर (Image container without blur) -->
+          <!-- प्रतिमा स्लायडर (Image container with glassmorphic layers to prevent cropping) -->
           <div class="relative w-full h-full rounded-[1.7rem] overflow-hidden bg-[#060c18] z-10">
-            <img src="ambabai.jpg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-cover object-center slide-1">
-            <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-cover object-center slide-2">
-            <img src="mahalaxmi.jpg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-cover object-center slide-3">
-            <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-cover object-center slide-4">
+            
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 w-full h-full slide-1 overflow-hidden">
+              <img src="ambabai.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
+              <img src="ambabai.jpg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 w-full h-full slide-2 overflow-hidden">
+              <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
+              <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 w-full h-full slide-3 overflow-hidden">
+              <img src="mahalaxmi.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
+              <img src="mahalaxmi.jpg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="absolute inset-0 w-full h-full slide-4 overflow-hidden">
+              <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none">
+              <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-contain p-2 z-10">
+            </div>
             
             <!-- हळवा शॅडो इफेक्ट (Soft shadow overlay) -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-20"></div>
           </div>
 
           <!-- कमानीवरील नावाची पाटी (Decorative Badge) -->
