@@ -144,13 +144,16 @@
   <!-- ==================== २. NEW DEVOTIONAL LIVE HERO SECTION ==================== -->
   <section class="relative bg-templeBlue min-h-[90vh] flex flex-col items-center justify-center overflow-hidden py-12 px-4 select-none">
     
-    <!-- 🎞️ ४-इमेज Full Screen Ken Burns स्लायडर -->
-    <div class="absolute inset-0 w-full h-full bg-[#060c18] z-0 overflow-hidden">
+    <!-- 🎞️ ४-इमेज Full Screen Ken Burns स्लायडर (Cinematic Blur applied to hide pixelation) -->
+    <div class="absolute inset-0 w-full h-full bg-[#060c18] z-0 overflow-hidden blur-[4px] scale-110">
       <img src="ambabai.jpg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-cover object-center slide-1">
       <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-cover object-center slide-2">
       <img src="mahalaxmi.jpg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-cover object-center slide-3">
       <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-cover object-center slide-4">
     </div>
+
+    <!-- Cinematic Film Grain / Noise Overlay (Smart way to add texture and hide low-res artifacts) -->
+    <div class="absolute inset-0 pointer-events-none z-10 mix-blend-overlay opacity-[0.15]" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E");'></div>
 
     <!-- Gradient Overlay for Readability & Depth -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-templeBlue/90 z-10 pointer-events-none"></div>
