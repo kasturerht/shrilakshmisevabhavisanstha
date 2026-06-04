@@ -149,23 +149,36 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="#" class="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold transition-all duration-500 ease-in-out hover:scale-105 cursor-pointer rounded-full">
+        <a href="#donation" class="group relative inline-flex flex-col items-center justify-center px-6 py-2.5 font-bold transition-all duration-500 ease-in-out hover:scale-105 cursor-pointer rounded-2xl overflow-visible">
           <!-- Outer Divine Aura (Pulsing Glow) -->
-          <span class="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500 via-yellow-300 to-orange-500 opacity-40 blur-md transition duration-500 group-hover:opacity-100 group-hover:blur-xl animate-pulse"></span>
+          <span class="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-600 via-yellow-400 to-orange-500 opacity-30 blur-md transition duration-500 group-hover:opacity-85 group-hover:blur-xl animate-pulse"></span>
+          
           <!-- Inner Button Shape with Golden Gradient Border -->
-          <span class="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 p-[1.5px]">
-             <!-- Dark Glass Core -->
-             <span class="absolute inset-0 rounded-full bg-[#060c18] backdrop-blur-xl"></span>
+          <span class="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 p-[1.5px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
+             <!-- Dark Glass Core with Deep Crimson/Gold tint -->
+             <span class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#120703] to-[#070e1b] backdrop-blur-xl group-hover:from-[#200d05] group-hover:to-[#0f1d35] transition-all duration-500"></span>
           </span>
+          
           <!-- Sweeping Laser / Shine Effect on Hover -->
-          <span class="absolute inset-0 rounded-full overflow-hidden">
-             <span class="absolute inset-0 w-full h-full -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></span>
+          <span class="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+             <span class="absolute inset-0 w-full h-full -translate-x-full bg-gradient-to-r from-transparent via-amber-300/30 to-transparent group-hover:animate-[shimmer_1.8s_infinite]"></span>
           </span>
+          
           <!-- Text & Icon -->
-          <span class="relative flex items-center gap-2 z-10 text-amber-300 group-hover:text-white transition-colors duration-300 tracking-wide text-xs lg:text-sm">
-            <svg class="w-4 h-4 text-rose-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.8)] animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            Donation / देणगी
-          </span>
+          <div class="relative flex items-center gap-2.5 z-10 text-amber-300 group-hover:text-white transition-colors duration-300">
+            <!-- traditional oil lamp (Diya) icon -->
+            <svg class="w-5 h-5 text-amber-400 group-hover:text-yellow-300 drop-shadow-[0_0_8px_rgba(245,158,11,0.85)] animate-pulse shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2A3 3 0 0 0 9 5c0 2 3 5 3 5s3-3 3-5a3 3 0 0 0-3-3zm6 10a6 6 0 0 1-12 0c0-1.5 1-3.5 2.5-4.5a1 1 0 0 1 1 1.7C8.4 10 8 11 8 12a4 4 0 0 0 8 0c0-1-.4-2-1.5-2.8a1 1 0 0 1 1-1.7c1.5 1 2.5 3 2.5 4.5z"/>
+            </svg>
+            
+            <div class="flex flex-col items-start leading-none text-left">
+              <span class="text-[9px] font-semibold tracking-widest text-amber-400/80 group-hover:text-amber-300 uppercase pb-0.5">सत्पात्री दान (पुण्य लाभ)</span>
+              <span class="text-xs font-bold tracking-wider text-amber-100 group-hover:text-white">Sacred Offering</span>
+            </div>
+          </div>
+          
+          <!-- Tiny Auspicious Bottom Indicator -->
+          <span class="absolute -bottom-1 w-2.5 h-2.5 bg-gradient-to-tr from-amber-400 to-amber-600 rotate-45 border border-[#060c18] z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm"></span>
         </a>
       </div>
     </nav>
