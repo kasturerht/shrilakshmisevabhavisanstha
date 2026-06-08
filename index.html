@@ -450,8 +450,11 @@
               <span class="text-amber-400 text-xs tracking-[0.2em] uppercase font-bold mb-8">सत्पात्री दान (Donation)</span>
               
               <!-- QR Code Container (Glowing) -->
-              <div class="relative w-full max-w-[16rem] h-72 bg-white p-2 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-8 flex items-center justify-center border-4 border-amber-500/20 overflow-hidden">
-                <img src="qrcode.jpeg" alt="Scan and Pay QR Code" class="w-full h-full object-cover object-center rounded-xl scale-110" onerror="this.src='ambabai.jpg'">
+              <div class="relative w-full max-w-[16rem] h-72 bg-white p-2 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-8 flex items-center justify-center border-4 border-amber-500/20 overflow-hidden cursor-pointer group hover:border-amber-400 transition-colors" onclick="openQrModal()">
+                <img src="qrcode.jpeg" alt="Scan and Pay QR Code" class="w-full h-full object-cover object-center rounded-xl scale-110 group-hover:scale-[1.15] transition-transform" onerror="this.src='ambabai.jpg'">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none rounded-xl">
+                   <span class="text-white bg-black/60 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider border border-white/20">Click to Enlarge</span>
+                </div>
               </div>
 
               <!-- Payment Logos -->
@@ -871,6 +874,56 @@
 
     </div>
   </section>
+
+  <!-- QR Code Modal -->
+  <div id="qr-modal" class="fixed inset-0 z-[60] hidden bg-black/95 backdrop-blur-md flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <!-- Close Button -->
+    <button onclick="closeQrModal()" class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/5 hover:bg-amber-600 rounded-full w-12 h-12 flex items-center justify-center transition-all border border-white/10 hover:border-amber-500 z-50 shadow-lg">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <!-- Modal Content -->
+    <div class="relative w-full max-w-sm sm:max-w-md mx-4 bg-white p-4 rounded-3xl shadow-[0_20px_60px_rgba(245,158,11,0.2)] transform scale-95 opacity-0 transition-all duration-300" id="qr-modal-content" onclick="event.stopPropagation()">
+      <img src="qrcode.jpeg" alt="Enlarged QR Code" class="w-full h-auto object-contain rounded-2xl border border-gray-200" onerror="this.src='ambabai.jpg'">
+      <div class="mt-4 text-center">
+        <h4 class="text-gray-800 font-black text-lg tracking-wide">श्री लक्ष्मी सेवाभावी संस्था</h4>
+        <p class="text-gray-500 text-sm mt-1">कोणत्याही UPI ॲपवरून स्कॅन करा</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const qrModal = document.getElementById('qr-modal');
+    const qrModalContent = document.getElementById('qr-modal-content');
+
+    function openQrModal() {
+      qrModal.classList.remove('hidden');
+      void qrModal.offsetWidth; // trigger reflow
+      qrModal.classList.remove('opacity-0');
+      qrModalContent.classList.remove('scale-95', 'opacity-0');
+      qrModalContent.classList.add('scale-100', 'opacity-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQrModal() {
+      qrModal.classList.add('opacity-0');
+      qrModalContent.classList.remove('scale-100', 'opacity-100');
+      qrModalContent.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        qrModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    // Close when clicking outside
+    qrModal.addEventListener('click', closeQrModal);
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !qrModal.classList.contains('hidden')) {
+        closeQrModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
