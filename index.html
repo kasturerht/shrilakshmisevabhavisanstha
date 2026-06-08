@@ -663,22 +663,55 @@
         </div>
       </div>
 
-      <!-- Add script for gallery filtering -->
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center opacity-0 transition-opacity duration-300">
+        
+        <!-- Close Button -->
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/5 hover:bg-amber-600 rounded-full w-12 h-12 flex items-center justify-center transition-all border border-white/10 hover:border-amber-500 z-50 shadow-lg">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <!-- Prev Button -->
+        <button id="lightbox-prev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/5 hover:bg-amber-600 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-all border border-white/10 hover:border-amber-500 z-50 shadow-lg">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+
+        <!-- Next Button -->
+        <button id="lightbox-next" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/5 hover:bg-amber-600 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-all border border-white/10 hover:border-amber-500 z-50 shadow-lg">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <!-- Image Container -->
+        <div class="relative w-full max-w-6xl mx-auto h-[85vh] flex items-center justify-center px-4 md:px-24">
+          <!-- Loading Spinner -->
+          <div id="lightbox-loader" class="absolute w-12 h-12 border-4 border-amber-500/30 border-t-amber-500 rounded-full animate-spin z-0"></div>
+          
+          <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 scale-95 opacity-0 relative z-10">
+          
+          <!-- Caption / Counter -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md px-6 py-2 rounded-full border border-white/10 text-amber-400 font-bold tracking-widest z-20 shadow-lg">
+            <span id="lightbox-counter">1 / 10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add script for gallery filtering and Lightbox -->
       <script>
         document.addEventListener('DOMContentLoaded', () => {
           const filterBtns = document.querySelectorAll('.filter-btn');
           const galleryItems = document.querySelectorAll('.gallery-item');
 
+          // --- GALLERY FILTER LOGIC ---
           filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
               // Remove active state from all buttons
               filterBtns.forEach(b => {
-                b.classList.remove('bg-amber-500/20', 'text-amber-400', 'border-amber-500/50');
+                b.classList.remove('bg-amber-500/20', 'text-amber-400', 'border-amber-500/50', 'active');
                 b.classList.add('bg-black/40', 'text-gray-300', 'border-amber-500/30');
               });
               
               // Add active state to clicked button
-              btn.classList.add('bg-amber-500/20', 'text-amber-400', 'border-amber-500/50');
+              btn.classList.add('bg-amber-500/20', 'text-amber-400', 'border-amber-500/50', 'active');
               btn.classList.remove('bg-black/40', 'text-gray-300');
 
               const filter = btn.getAttribute('data-filter');
@@ -697,6 +730,126 @@
                 }
               });
             });
+          });
+
+          // --- LIGHTBOX LOGIC ---
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          const closeBtn = document.getElementById('lightbox-close');
+          const prevBtn = document.getElementById('lightbox-prev');
+          const nextBtn = document.getElementById('lightbox-next');
+          const counter = document.getElementById('lightbox-counter');
+          
+          let currentImages = [];
+          let currentIndex = 0;
+          let slideInterval;
+
+          // Initialize items
+          galleryItems.forEach(item => {
+            item.style.cursor = 'zoom-in';
+            // Add hover effect to the image container
+            item.classList.add('hover:ring-2', 'hover:ring-amber-500', 'transition-all');
+            
+            item.addEventListener('click', () => {
+              const activeBtn = document.querySelector('.filter-btn.active');
+              const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+              
+              // Collect all visible images
+              currentImages = Array.from(galleryItems)
+                .filter(el => filter === 'all' || el.getAttribute('data-category') === filter)
+                .map(el => el.querySelector('img').src);
+              
+              const clickedImgSrc = item.querySelector('img').src;
+              currentIndex = currentImages.indexOf(clickedImgSrc);
+              
+              openLightbox();
+            });
+          });
+
+          function openLightbox() {
+            lightbox.classList.remove('hidden');
+            void lightbox.offsetWidth; // trigger reflow
+            lightbox.classList.remove('opacity-0');
+            
+            updateImage();
+            startAutoSlide();
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+          }
+
+          function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+              lightbox.classList.add('hidden');
+              lightboxImg.src = '';
+            }, 300);
+            stopAutoSlide();
+            document.body.style.overflow = '';
+          }
+
+          function updateImage() {
+            // Fade out
+            lightboxImg.classList.remove('scale-100', 'opacity-100');
+            lightboxImg.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+              lightboxImg.src = currentImages[currentIndex];
+              counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+              
+              // Fade in once loaded
+              lightboxImg.onload = () => {
+                lightboxImg.classList.remove('scale-95', 'opacity-0');
+                lightboxImg.classList.add('scale-100', 'opacity-100');
+              };
+            }, 200);
+          }
+
+          function showNext() {
+            if (currentImages.length <= 1) return;
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            updateImage();
+            resetAutoSlide();
+          }
+
+          function showPrev() {
+            if (currentImages.length <= 1) return;
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            updateImage();
+            resetAutoSlide();
+          }
+
+          function startAutoSlide() {
+            if (currentImages.length > 1) {
+              slideInterval = setInterval(showNext, 5000);
+            }
+          }
+
+          function stopAutoSlide() {
+            clearInterval(slideInterval);
+          }
+
+          function resetAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+          }
+
+          // Event Listeners
+          closeBtn.addEventListener('click', closeLightbox);
+          nextBtn.addEventListener('click', showNext);
+          prevBtn.addEventListener('click', showPrev);
+
+          // Close when clicking outside image
+          lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.closest('.flex.items-center.justify-center.px-4') === e.target) {
+              closeLightbox();
+            }
+          });
+
+          // Keyboard nav
+          document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') showNext();
+            if (e.key === 'ArrowLeft') showPrev();
           });
         });
       </script>
