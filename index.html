@@ -557,62 +557,149 @@
 
       </div>
 
-      <!-- Action Gallery Carousel (Infinite Scroll) -->
-      <div class="text-center mb-8">
-        <h3 class="text-xl md:text-2xl font-bold text-white tracking-wide">कार्याची क्षणचित्रे</h3>
-      </div>
-      
-      <div class="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-hidden py-4">
-        <!-- Fade Edges -->
-        <div class="absolute top-0 left-0 w-16 md:w-48 h-full bg-gradient-to-r from-[#0f1a30] to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute top-0 right-0 w-16 md:w-48 h-full bg-gradient-to-l from-[#0f1a30] to-transparent z-10 pointer-events-none"></div>
-        
-        <div class="animate-gallery-scroll whitespace-nowrap flex items-center gap-6">
-          
-          <!-- SET 1 (Images) -->
-          <div class="flex items-center gap-6 shrink-0 pe-6">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.48.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.49.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.51.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.53.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.54.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.56.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.57.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.59.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.28.00.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.20.54.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.20.55.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.20.56.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.08.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.09.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.23.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.24.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.26.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
+      <!-- Action Gallery Carousel (Tabbed) -->
+      <div class="mt-16 w-full max-w-6xl mx-auto px-4 relative z-10">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-amber-600 mb-4 drop-shadow-md">कार्याची क्षणचित्रे</h2>
+          <p class="text-gray-300 text-lg">समाजातील तळागाळातील घटकांपर्यंत पोहोचून केलेली सेवा</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10" id="gallery-tabs">
+          <button class="filter-btn active px-6 py-2 rounded-full border border-amber-500/50 bg-amber-500/20 text-amber-400 font-medium transition-all hover:bg-amber-500/30" data-filter="all">सर्व</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-amber-500/30 bg-black/40 text-gray-300 font-medium transition-all hover:bg-amber-500/20 hover:text-amber-400" data-filter="annadaan">अन्नदान</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-amber-500/30 bg-black/40 text-gray-300 font-medium transition-all hover:bg-amber-500/20 hover:text-amber-400" data-filter="praniseva">प्राणी सेवा</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-amber-500/30 bg-black/40 text-gray-300 font-medium transition-all hover:bg-amber-500/20 hover:text-amber-400" data-filter="vruksharopan">वृक्षारोपण</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-amber-500/30 bg-black/40 text-gray-300 font-medium transition-all hover:bg-amber-500/20 hover:text-amber-400" data-filter="health">आरोग्य व शिक्षण</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+          <!-- Anna Daan -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="annadaan">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.48.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <span class="text-white font-medium bg-black/60 px-4 py-2 rounded-full border border-amber-500/30 backdrop-blur-sm">अन्नदान</span>
+            </div>
           </div>
-          
-          <!-- SET 2 (Clone for infinite scroll) -->
-          <div class="flex items-center gap-6 shrink-0 pe-6" aria-hidden="true">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.48.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.49.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.51.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.53.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.54.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.56.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.57.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.27.59.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 14.28.00.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.20.54.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.20.55.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.20.56.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.08.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.09.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.23.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.24.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
-            <img src="WhatsApp Image 2026-06-05 at 15.21.26.jpeg" class="h-48 md:h-64 w-auto rounded-2xl shadow-lg border border-amber-900/30 object-cover" onerror="this.src='ambabai.jpg'">
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="annadaan">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.49.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="annadaan">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.51.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
           </div>
 
+          <!-- Prani Seva -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="praniseva">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.23.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <span class="text-white font-medium bg-black/60 px-4 py-2 rounded-full border border-amber-500/30 backdrop-blur-sm">प्राणी सेवा</span>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="praniseva">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.24.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="praniseva">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.25 (1).jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+           <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="praniseva">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.25.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+           <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="praniseva">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.26.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+
+          <!-- Vruksharopan -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="vruksharopan">
+            <img src="WhatsApp Image 2026-06-05 at 15.20.54.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <span class="text-white font-medium bg-black/60 px-4 py-2 rounded-full border border-amber-500/30 backdrop-blur-sm">वृक्षारोपण</span>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="vruksharopan">
+            <img src="WhatsApp Image 2026-06-05 at 15.20.55 (1).jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="vruksharopan">
+            <img src="WhatsApp Image 2026-06-05 at 15.20.55.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="vruksharopan">
+            <img src="WhatsApp Image 2026-06-05 at 15.20.56.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+
+          <!-- Health & Education -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.53.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <span class="text-white font-medium bg-black/60 px-4 py-2 rounded-full border border-amber-500/30 backdrop-blur-sm">आरोग्य व इतर</span>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.54.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.56.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.57.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.27.59.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.28.00.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.07 (1).jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.08.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 15.21.09.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-amber-900/30" data-category="health">
+            <img src="WhatsApp Image 2026-06-05 at 14.28.02.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='ambabai.jpg'">
+          </div>
         </div>
       </div>
+
+      <!-- Add script for gallery filtering -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const filterBtns = document.querySelectorAll('.filter-btn');
+          const galleryItems = document.querySelectorAll('.gallery-item');
+
+          filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              // Remove active state from all buttons
+              filterBtns.forEach(b => {
+                b.classList.remove('bg-amber-500/20', 'text-amber-400', 'border-amber-500/50');
+                b.classList.add('bg-black/40', 'text-gray-300', 'border-amber-500/30');
+              });
+              
+              // Add active state to clicked button
+              btn.classList.add('bg-amber-500/20', 'text-amber-400', 'border-amber-500/50');
+              btn.classList.remove('bg-black/40', 'text-gray-300');
+
+              const filter = btn.getAttribute('data-filter');
+
+              galleryItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                  item.style.display = 'block';
+                  // Simple animation
+                  item.style.opacity = '0';
+                  setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease-in-out';
+                    item.style.opacity = '1';
+                  }, 50);
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            });
+          });
+        });
+      </script>
 
     </div>
   </section>
