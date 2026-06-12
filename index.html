@@ -55,39 +55,55 @@
     .animate-float-medium { animation: floatUp 11s linear infinite; }
     .animate-float-fast { animation: floatUp 7s linear infinite; }
 
-    /* ब) ४-इमेज Ken Burns स्लायडर */
+    /* ब) ६-इमेज Ken Burns स्लायडर */
     @keyframes kenBurns1 {
       0% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
-      20% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
-      25% { opacity: 0; transform: scale(1.08); }
-      95% { opacity: 0; transform: scale(1); }
+      13.88% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
+      16.66% { opacity: 0; transform: scale(1.08); }
+      97.22% { opacity: 0; transform: scale(1); }
       100% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
     }
     @keyframes kenBurns2 {
-      0%, 20% { opacity: 0; transform: scale(1); }
-      25% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
-      45% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
-      50% { opacity: 0; transform: scale(1.08); }
+      0%, 13.88% { opacity: 0; transform: scale(1); }
+      16.66% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
+      30.54% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
+      33.33% { opacity: 0; transform: scale(1.08); }
       100% { opacity: 0; transform: scale(1); }
     }
     @keyframes kenBurns3 {
-      0%, 45% { opacity: 0; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
-      70% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
-      75% { opacity: 0; transform: scale(1.08); }
+      0%, 30.54% { opacity: 0; transform: scale(1); }
+      33.33% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
+      47.21% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
+      50% { opacity: 0; transform: scale(1.08); }
       100% { opacity: 0; transform: scale(1); }
     }
     @keyframes kenBurns4 {
-      0%, 70% { opacity: 0; transform: scale(1); }
-      75% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
-      95% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
+      0%, 47.21% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
+      63.88% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
+      66.66% { opacity: 0; transform: scale(1.08); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+    @keyframes kenBurns5 {
+      0%, 63.88% { opacity: 0; transform: scale(1); }
+      66.66% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
+      80.54% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
+      83.33% { opacity: 0; transform: scale(1.08); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+    @keyframes kenBurns6 {
+      0%, 80.54% { opacity: 0; transform: scale(1); }
+      83.33% { opacity: 1; transform: scale(1); filter: brightness(1.1); }
+      97.22% { opacity: 1; transform: scale(1.05); filter: brightness(1); }
       100% { opacity: 0; transform: scale(1.08); }
     }
 
-    .slide-1 { animation: kenBurns1 24s ease-in-out infinite; }
-    .slide-2 { animation: kenBurns2 24s ease-in-out infinite; }
-    .slide-3 { animation: kenBurns3 24s ease-in-out infinite; }
-    .slide-4 { animation: kenBurns4 24s ease-in-out infinite; }
+    .slide-1 { animation: kenBurns1 36s ease-in-out infinite; }
+    .slide-2 { animation: kenBurns2 36s ease-in-out infinite; }
+    .slide-3 { animation: kenBurns3 36s ease-in-out infinite; }
+    .slide-4 { animation: kenBurns4 36s ease-in-out infinite; }
+    .slide-5 { animation: kenBurns5 36s ease-in-out infinite; }
+    .slide-6 { animation: kenBurns6 36s ease-in-out infinite; }
 
     /* क) प्रकाशाचे फिरणारे किरण (Divine Rays) */
     @keyframes rotateRays {
@@ -214,10 +230,12 @@
     
     <!-- 🎞️ Background Ambient Glow (Extremely blurred, low opacity, shifts colors dynamically with the slides) -->
     <div class="absolute inset-0 w-full h-full bg-[#060c18] z-0 overflow-hidden blur-[60px] opacity-25 scale-110 pointer-events-none">
-      <img src="ambabai.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-1">
-      <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-2">
-      <img src="mahalaxmi.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-3">
-      <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-4">
+      <img src="WhatsApp Image 2026-06-12 at 20.15.50 (1).jpeg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-1">
+      <img src="WhatsApp Image 2026-06-12 at 20.15.50.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-2">
+      <img src="WhatsApp Image 2026-06-12 at 20.15.51 (1).jpeg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-3">
+      <img src="WhatsApp Image 2026-06-12 at 20.15.51.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-4">
+      <img src="WhatsApp Image 2026-06-12 at 20.15.52.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-5">
+      <img src="WhatsApp Image 2026-06-12 at 20.15.52 (1).jpeg" alt="" class="absolute inset-0 w-full h-full object-cover object-center slide-6">
     </div>
 
     <!-- Cinematic Film Grain / Noise Overlay (Smart way to add texture and hide low-res artifacts) -->
@@ -290,12 +308,14 @@
           <!-- सोनेरी कमान बॉर्डर (Thin Golden Arch Outline) -->
           <div class="absolute inset-0 temple-arch-clip bg-gradient-to-b from-amber-300 via-amber-500 to-yellow-600 z-0"></div>
           
-          <!-- मुख्य प्रतिमा स्लायडर (Main Image Slider inside the Arch, styled with object-cover to look like a window view) -->
+          <!-- मुख्य प्रतिमा स्लायडर (Main Image Slider inside the Arch, styled with object-cover and object-bottom to show the bottom footer) -->
           <div class="absolute inset-[2.5px] temple-arch-clip bg-[#060c18] z-10 overflow-hidden">
-            <img src="ambabai.jpg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-cover object-center slide-1">
-            <img src="mahalaxmi-temple-kolhapur-1-attr-hero.jpg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-cover object-center slide-2">
-            <img src="mahalaxmi.jpg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-cover object-center slide-3">
-            <img src="mahalaxmi-temple-kolhapur-maharashtra-2-attr-hero.jpg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-cover object-center slide-4">
+            <img src="WhatsApp Image 2026-06-12 at 20.15.50 (1).jpeg" alt="Shree Mahalaxmi Devi 1" class="absolute inset-0 w-full h-full object-cover object-bottom slide-1">
+            <img src="WhatsApp Image 2026-06-12 at 20.15.50.jpeg" alt="Shree Mahalaxmi Devi 2" class="absolute inset-0 w-full h-full object-cover object-bottom slide-2">
+            <img src="WhatsApp Image 2026-06-12 at 20.15.51 (1).jpeg" alt="Shree Mahalaxmi Devi 3" class="absolute inset-0 w-full h-full object-cover object-bottom slide-3">
+            <img src="WhatsApp Image 2026-06-12 at 20.15.51.jpeg" alt="Shree Mahalaxmi Devi 4" class="absolute inset-0 w-full h-full object-cover object-bottom slide-4">
+            <img src="WhatsApp Image 2026-06-12 at 20.15.52.jpeg" alt="Shree Mahalaxmi Devi 5" class="absolute inset-0 w-full h-full object-cover object-bottom slide-5">
+            <img src="WhatsApp Image 2026-06-12 at 20.15.52 (1).jpeg" alt="Shree Mahalaxmi Devi 6" class="absolute inset-0 w-full h-full object-cover object-bottom slide-6">
             
             <!-- हळवा शॅडो इफेक्ट (Soft shadow overlay) -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/15 pointer-events-none"></div>
